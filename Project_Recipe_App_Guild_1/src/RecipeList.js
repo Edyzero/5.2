@@ -6,9 +6,9 @@ function RecipeList({recipes, setRecipes}) {
   // TODO: Create at least one additional component that is used by this component.
   // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked
 
-const handelDelete = (indexDelete) => 
-  setRecipes((...currentRecipes) => 
-  currentRecipes.filter(({...recipe}, index) => index !== indexDelete));
+const handelDelete = (indexDelete) => {
+  setRecipes((currentRecipes) => 
+  currentRecipes.filter((_, index) => index !== indexDelete));}
 
 
 
@@ -38,7 +38,7 @@ const handelDelete = (indexDelete) =>
               <td>{recipe.ingredients}</td>
               <td>{recipe.preparation}</td>
               <td>
-                <button name="delete" onClick={handelDelete}>
+                <button name="delete" onClick= {()=>handelDelete(index)}>
                   Delete
                 </button>
               </td>
